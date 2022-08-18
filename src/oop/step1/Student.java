@@ -25,6 +25,19 @@ public class Student {
         return power;
     }
 
+    public int stronger(Student student) {
+        int compareStudentPower = student.getSumPower();
+        int weStudentPower = getSumPower();
+
+        if (weStudentPower == compareStudentPower) {
+            return 0;
+        } else if (weStudentPower > compareStudentPower) {
+            return -1;
+        }
+
+        return 1;
+    }
+
     public Characteristic[] getCharacteristics() {
         return characteristics;
     }
