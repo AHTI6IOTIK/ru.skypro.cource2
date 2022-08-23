@@ -6,10 +6,10 @@ public class Car extends BaseMotorTransport {
     }
 
     public void updateTyre() {
-        System.out.println("Меняем покрышку");
+        System.out.println("Меняем покрышку авто");
     }
 
     public void checkEngine() {
-        System.out.println("Проверяем двигатель");
+        System.out.println("Проверяем двигатель авто");
     }
 }

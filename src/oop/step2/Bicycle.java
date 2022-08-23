@@ -8,6 +8,6 @@ public class Bicycle extends BaseTransport {
 
     @Override
     public void updateTyre() {
-        System.out.println("Меняем покрышку");
+        System.out.println("Меняем покрышку велосипеда");
     }
 }
