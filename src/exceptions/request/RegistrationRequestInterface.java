@@ -1,6 +1,6 @@
 package exceptions.request;
 
-public interface RegistrationRequestInterface extends RequestInterface {
+public interface RegistrationRequestInterface {
     String getLogin();
 
     String getPassword();

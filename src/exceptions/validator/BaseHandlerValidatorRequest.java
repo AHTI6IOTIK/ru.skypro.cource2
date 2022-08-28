@@ -1,5 +1,7 @@
 package exceptions.validator;
 
+import exceptions.exception.WrongLoginException;
+import exceptions.exception.WrongPasswordException;
 import exceptions.request.RegistrationRequestInterface;
 
 public abstract class BaseHandlerValidatorRequest implements ValidatorRequestInterface {
@@ -10,7 +12,7 @@ public abstract class BaseHandlerValidatorRequest implements ValidatorRequestInt
         next = handler;
     }
 
-    public boolean validate(RegistrationRequestInterface request) {
+    public boolean validate(RegistrationRequestInterface request) throws WrongLoginException, WrongPasswordException {
 
         if (null != next) {
             next.validate(request);
@@ -19,5 +21,5 @@ public abstract class BaseHandlerValidatorRequest implements ValidatorRequestInt
         return this.doValidate(request);
     }
 
-    protected abstract boolean doValidate(RegistrationRequestInterface request);
+    protected abstract boolean doValidate(RegistrationRequestInterface request) throws WrongLoginException, WrongPasswordException;
 }

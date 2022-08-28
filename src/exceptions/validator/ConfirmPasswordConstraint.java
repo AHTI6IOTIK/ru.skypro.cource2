@@ -5,7 +5,7 @@ import exceptions.request.RegistrationRequestInterface;
 
 public class ConfirmPasswordConstraint extends BaseHandlerValidatorRequest {
     @Override
-    public boolean doValidate(RegistrationRequestInterface request) {
+    public boolean doValidate(RegistrationRequestInterface request) throws WrongPasswordException {
         if (!request.getPassword().equals(request.getConfirmPassword())) {
             throw new WrongPasswordException("Password confirmation is not correct");
         }

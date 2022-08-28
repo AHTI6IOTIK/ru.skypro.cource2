@@ -3,20 +3,24 @@ package exceptions.validator;
 import exceptions.exception.WrongLoginException;
 import exceptions.request.RegistrationRequestInterface;
 
-public class LoginLengthConstraint extends BaseHandlerValidatorRequest {
-    private static final int MINIMUM_LOGIN_LENGTH = 20;
+public class LoginLengthConstraint extends BaseLengthHandlerValidatorRequest {
+    @Override
+    protected String getValue(RegistrationRequestInterface request) {
+        return request.getLogin();
+    }
 
     @Override
-    public boolean doValidate(RegistrationRequestInterface request) {
-        if (request.getLogin().length() < MINIMUM_LOGIN_LENGTH) {
-            throw new WrongLoginException(
-                String.format(
-                    "The login cannot be shorter than %d characters",
-                    MINIMUM_LOGIN_LENGTH
-                )
-            );
-        }
+    protected int getLength() {
+        return 20;
+    }
 
-        return true;
+    @Override
+    protected void processError() throws WrongLoginException {
+        throw new WrongLoginException(
+            String.format(
+                "The login cannot be shorter than %d characters",
+                getLength()
+            )
+        );
     }
 }

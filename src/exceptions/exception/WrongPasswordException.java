@@ -1,6 +1,6 @@
 package exceptions.exception;
 
-public class WrongPasswordException extends RuntimeException{
+public class WrongPasswordException extends Exception {
     public WrongPasswordException(String message) {
         super(message);
     }

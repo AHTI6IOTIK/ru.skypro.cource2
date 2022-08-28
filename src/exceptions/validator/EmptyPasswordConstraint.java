@@ -5,7 +5,7 @@ import exceptions.request.RegistrationRequestInterface;
 
 public class EmptyPasswordConstraint extends BaseHandlerValidatorRequest {
     @Override
-    public boolean doValidate(RegistrationRequestInterface request) {
+    public boolean doValidate(RegistrationRequestInterface request) throws WrongLoginException {
         if (null == request.getPassword() || request.getPassword().isEmpty()) {
             throw new WrongLoginException("Password is empty");
         }
