@@ -1,7 +1,5 @@
 package exceptions.service;
 
-import exceptions.exception.WrongLoginException;
-import exceptions.exception.WrongPasswordException;
 import exceptions.request.RegistrationRequest;
 import exceptions.validator.*;
 
@@ -26,7 +24,16 @@ public class RegisterService {
         allowedCharacters.setNext(emptyLoginConstraint);
     }
 
-    public boolean processRegistration(RegistrationRequest request) throws WrongLoginException, WrongPasswordException {
-        return registerValidator.validate(request);
+    public boolean processRegistration(RegistrationRequest request) {
+        try {
+            return registerValidator.validate(request);
+        } catch (Exception exception) {
+            System.out.printf(
+                "Registration error: %s",
+                exception.getMessage()
+            );
+        }
+
+        return false;
     }
 }

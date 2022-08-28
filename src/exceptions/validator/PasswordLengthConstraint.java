@@ -3,7 +3,7 @@ package exceptions.validator;
 import exceptions.exception.WrongPasswordException;
 import exceptions.request.RegistrationRequestInterface;
 
-public class PasswordLengthConstraint extends BaseLengthHandlerValidatorRequest {
+public class PasswordLengthConstraint extends BaseLengthGteHandlerValidatorRequest {
     @Override
     protected String getValue(RegistrationRequestInterface request) {
         return request.getLogin();

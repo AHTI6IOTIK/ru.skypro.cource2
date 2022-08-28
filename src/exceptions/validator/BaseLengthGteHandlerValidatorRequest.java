@@ -4,10 +4,10 @@ import exceptions.exception.WrongLoginException;
 import exceptions.exception.WrongPasswordException;
 import exceptions.request.RegistrationRequestInterface;
 
-public abstract class BaseLengthHandlerValidatorRequest extends BaseHandlerValidatorRequest {
+public abstract class BaseLengthGteHandlerValidatorRequest extends BaseHandlerValidatorRequest {
     @Override
     public boolean doValidate(RegistrationRequestInterface request) throws WrongLoginException, WrongPasswordException {
-        if (getValue(request).length() < getLength()) {
+        if (getValue(request).length() >= getLength()) {
             processError();
         }
 
