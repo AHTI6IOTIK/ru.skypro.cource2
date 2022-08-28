@@ -7,8 +7,8 @@ public class SignUpProcessor {
     public static void main(String[] args) {
         RegisterService service = new RegisterService();
         RegistrationRequest request = new RegistrationRequest(
-            "java_skypro.gojava_skypro.go",
-            "D_1hWiKjjP_9D_1hWiKjjP_9",
+            "java_skypro.go",
+            "D_1hWiKjjP_9",
             "D_1hWiKjjP_9"
         );
 
