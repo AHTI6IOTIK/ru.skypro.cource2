@@ -6,7 +6,7 @@ import exceptions.request.RegistrationRequest;
 import exceptions.validator.*;
 
 public class RegisterService {
-    ValidatorRequestInterface registerValidator;
+    private final ValidatorRequestInterface registerValidator;
 
     public RegisterService() {
 
