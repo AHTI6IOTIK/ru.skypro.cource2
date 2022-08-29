@@ -1,5 +1,7 @@
 package exceptions.service;
 
+import exceptions.exception.WrongLoginException;
+import exceptions.exception.WrongPasswordException;
 import exceptions.request.RegistrationRequest;
 import exceptions.validator.*;
 
@@ -27,7 +29,7 @@ public class RegisterService {
     public boolean processRegistration(RegistrationRequest request) {
         try {
             return registerValidator.validate(request);
-        } catch (Exception exception) {
+        } catch (WrongLoginException | WrongPasswordException exception) {
             System.out.printf(
                 "Registration error: %s",
                 exception.getMessage()
